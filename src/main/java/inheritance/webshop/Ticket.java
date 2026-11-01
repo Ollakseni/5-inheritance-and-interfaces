@@ -13,6 +13,31 @@ package inheritance.webshop;
  * also skip this class and continue with the next part of the exercise if you
  * feel that you have understood the concept of inheritance.
  */
-public class Ticket {
+public class Ticket extends Product {
+
+    private String artist;
+    private String date;
+    private String location;
+
+    public Ticket(String title, String description, double price, String artist, String date, String location) {
+        super(title, location, price);
+        this.artist = artist;
+        this.date = date;
+        this.location = location;
+    }
+    public String getArtist() {
+        return artist;
+    }
+    public String getDate() {
+        return date;
+    }
+    public String getLocation() {
+        return location;
+    }
+
+    public String toString() {
+        return "Ticket to " + getTitle() + ", description " + getDescription() + ", price " + getPrice() + ", artist " + artist + ", date " + date + " and place " + location + ".";
+    }
+
 
 }
