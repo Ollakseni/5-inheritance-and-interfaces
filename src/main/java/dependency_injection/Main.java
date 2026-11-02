@@ -31,7 +31,7 @@ public class Main {
          * A new application object is created with the System.out object as an
          * argument. Run this code and see the output.
          */
-        Application app = new Application(System.out);
+        Application app = new Application(new PrinterWithTimestamp());
         app.run();
 
         /*

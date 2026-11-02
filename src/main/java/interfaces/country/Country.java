@@ -14,7 +14,7 @@ package interfaces.country;
  * Read more at
  * https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html
  */
-public class Country {
+public class Country implements Comparable<Country> {
 
     private final String name;
     private final int population;
@@ -30,6 +30,10 @@ public class Country {
 
     public int getPopulation() {
         return population;
+    }
+    @Override
+    public int compareTo(Country other) {
+        return Integer.compare(this.population, other.population);
     }
 
     @Override

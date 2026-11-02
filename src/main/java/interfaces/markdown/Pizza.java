@@ -21,7 +21,7 @@ import java.util.List;
  *
  * Price: 10.90
  */
-public class Pizza {
+public class Pizza implements MarkdownExport {
 
     private final String name;
     private final double price;
@@ -43,5 +43,14 @@ public class Pizza {
 
     public List<String> getToppings() {
         return toppings;
+    }
+    public String exportMarkdown() {
+        StringBuilder markdown = new StringBuilder("# ").append(name).append("\n\nToppings:");
+        for (String topping : toppings) {
+            markdown.append("\n- ").append(topping);
+        }
+        markdown.append("\n\nPrice: ")
+                .append(String.format(java.util.Locale.ROOT, "%.2f", price));
+        return markdown.toString();
     }
 }
